@@ -5,6 +5,7 @@ import { ethers } from "ethers";
 import { Bars } from "react-loader-spinner";
 import axios from "axios";
 import Moment from "moment";
+import toastr from "toastr";
 
 import { NFTAddress, NFTmarketplaceAddress } from "../contract/address";
 import MarketAbi from "../contract/abi/MarketAbi.json";
@@ -192,12 +193,12 @@ function Profile() {
 
   const getSoldOutItems = async () => {
     // get current wallet address
-    const accounts = await ethereum.request({
+    const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     setAuth(accounts[0]);
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       NFTmarketplaceAddress,

@@ -7,6 +7,7 @@ import MarketAbi from "../contract/abi/MarketAbi.json";
 import MintAbi from "../contract/abi/MintAbi.json";
 import Moment from "moment";
 import Countdown from "react-countdown";
+import toastr from "toastr";
 
 const http = axios.create({
   baseURL: "https://deep-index.moralis.io/api/v2",
@@ -89,7 +90,7 @@ function Items() {
   };
 
   const loadNFTItems = async () => {
-    const accounts = await ethereum.request({
+    const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     setAuth(accounts[0]);
@@ -198,7 +199,7 @@ function Items() {
     ];
     console.log(nfts);
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       NFTmarketplaceAddress,
@@ -333,12 +334,12 @@ function Items() {
 
   const getSoldOutItems = async () => {
     // get current wallet address
-    const accounts = await ethereum.request({
+    const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     setAuth(accounts[0]);
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       NFTmarketplaceAddress,

@@ -1,10 +1,7 @@
 import React from 'react';
 import { createBrowserHistory } from 'history'
-import { useSelector } from 'react-redux';
-
 import Header from '../layouts/Header';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
+import { BrowserRouter as Router, Switch, Route,  } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import Marketplace from '../pages/Marketplace';
 import Collection from '../pages/Collection';
@@ -16,13 +13,13 @@ import ItemDetail from '../pages/ItemDetail';
 import CreateType from '../pages/CreateType';
 import Upload from '../pages/Upload';
 import CreateCollection from '../pages/CreateCollection';
-import NotFoundPage from '../pages/NotFoundPage';
 import Items from '../pages/Items';
 
 var history = createBrowserHistory();
 
-function appRouter() {
-    const header_title = useSelector(state => state.headerTitle);
+const appRouter = ()  =>{
+
+
 
     return (
         <Router history={history}>

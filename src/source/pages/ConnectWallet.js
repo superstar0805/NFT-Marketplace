@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter, Link, Redirect} from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
+import { ethers } from "ethers";
 
 import {dispatch_headerTitle} from "../actions/dispatch_headerTitle";
 

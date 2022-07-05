@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import axios from "axios";
 import { ethers } from "ethers";
 import { Bars } from 'react-loader-spinner';
+import toastr from "toastr";
 
 import { NFTAddress } from '../contract/address';
 import NFT from '../contract/abi/MintAbi.json';

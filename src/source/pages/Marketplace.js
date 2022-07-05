@@ -8,6 +8,7 @@ import MintAbi from "../contract/abi/MintAbi.json";
 import Moment from "moment";
 import { Bars } from 'react-loader-spinner';
 import Countdown from "react-countdown";
+import toastr from "toastr";
 
 const http = axios.create({
   baseURL: "https://deep-index.moralis.io/api/v2",
@@ -87,7 +88,7 @@ function Marketplace() {
 
   const loadNFTItems = async () => {
     setIsLoading(true);
-    const accounts = await ethereum.request({
+    const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     setAuth(accounts[0]);
@@ -198,7 +199,7 @@ function Marketplace() {
     console.log("nfts", nfts);
 
     // const nfts = [{ id: 1, contract: '0xF1d412BA97e1734129ed28A9D3d9496AEaAd9eeE', tokenId: 1, type: 'fixed' }, { id: 2, contract: '0xF1d412BA97e1734129ed28A9D3d9496AEaAd9eeE', tokenId: 2, type: 'auction' }];
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       NFTmarketplaceAddress,
@@ -284,9 +285,9 @@ function Marketplace() {
     const { ethereum } = window;
 
     // get current wallet address
-    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(NFTAddress, MintAbi, signer);
 
@@ -323,12 +324,12 @@ function Marketplace() {
 
   const getSoldOutItems = async () => {
     // get current wallet address
-    const accounts = await ethereum.request({
+    const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     setAuth(accounts[0]);
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       NFTmarketplaceAddress,
@@ -374,9 +375,9 @@ function Marketplace() {
     const { ethereum } = window;
 
     // get current wallet address
-    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const marketContract = new ethers.Contract(
       NFTmarketplaceAddress,
@@ -414,9 +415,9 @@ function Marketplace() {
     const { ethereum } = window;
 
     // get current wallet address
-    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const marketContract = new ethers.Contract(
       NFTmarketplaceAddress,
@@ -453,9 +454,9 @@ function Marketplace() {
     const { ethereum } = window;
 
     // get current wallet address
-    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const marketContract = new ethers.Contract(
       NFTmarketplaceAddress,
@@ -477,9 +478,9 @@ function Marketplace() {
     const { ethereum } = window;
 
     // get current wallet address
-    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
 
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const marketContract = new ethers.Contract(
       NFTmarketplaceAddress,
