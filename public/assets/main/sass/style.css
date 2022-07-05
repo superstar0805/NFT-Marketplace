@@ -1,0 +1,9 @@
+.nav_icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 15px;
+    text-align: center;
+    line-height: 50px;
+    color: white !important;
+}
