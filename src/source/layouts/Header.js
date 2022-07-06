@@ -114,11 +114,11 @@ function Header({ children }) {
 											</a>
 										</li>
 										<li>
-											<a href="/" className="text-center d-flex">
+											<a href="/profile" className="text-center d-flex">
 												<div>
 													<i style={{ backgroundColor: "#efe543" }} className="nav-icon ri-article-line nav_icon"></i>
 													<br />
-													<span className="text-muted text-sm"> Metaverse </span>
+													<span className="text-muted text-sm"> Profile </span>
 												</div>
 											</a>
 										</li>
@@ -160,7 +160,7 @@ function Header({ children }) {
 												<a className="color_black" href=""> MetaVerse Training</a>
 											</li>
 											<li> <a className="color_black" href="/collections"> Collections</a> </li>
-											<li> <a className="color_black" href=""> Profile</a> </li>
+											<li> <a className="color_black" href="/profile"> Profile</a> </li>
 										</ul>
 										<div className="space-y-20">
 											<div className="header__search in_mobile w-full">
@@ -225,11 +225,11 @@ function Header({ children }) {
 											</a>
 										</li>
 										<li>
-											<a href="/" className="text-center d-flex">
+											<a href="/profile" className="text-center d-flex">
 												<div>
 													<i style={{ backgroundColor: "#efe543" }} className="nav-icon ri-article-line nav_icon"></i>
 													<br />
-													<span className="text-muted text-sm"> Metaverse </span>
+													<span className="text-muted text-sm"> Profile </span>
 												</div>
 											</a>
 										</li>
@@ -276,7 +276,7 @@ function Header({ children }) {
 												/>
 												<div className="details">
 													<a href="activity.html"> <h6>Money revieved</h6> </a>
-													<p>0.6 BNB</p>
+													<p>0.6 ETH</p>
 												</div>
 												<span className="circle"></span>
 											</div>
@@ -284,7 +284,7 @@ function Header({ children }) {
 									</div>
 									<div className="header__avatar">
 										<div className="price">
-											<span>{balance} <strong>BNB</strong> </span>
+											<span>{balance} <strong>ETH</strong> </span>
 										</div>
 										<img className="avatar" src="https://avatars.dicebear.com/api/identicon/{{rand()}}.svg" alt="avatar" />
 										<div className="avatar_popup space-y-20">

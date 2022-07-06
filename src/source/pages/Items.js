@@ -90,116 +90,118 @@ function Items() {
   };
 
   const loadNFTItems = async () => {
-    const accounts = await window.ethereum.request({
+    const { ethereum } = window;
+
+    const accounts = await ethereum.request({
       method: "eth_requestAccounts",
     });
     setAuth(accounts[0]);
 
-    // const rawData = await http.get(
-    //   `/${NFTmarketplaceAddress}/nft?chain=rinkeby&format=decimal`
-    // );
-    // const nfts = rawData.data.result;
-    const nfts = [
-      {
-        "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-        "token_id": "16",
-        "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
-        "block_number": "10420077",
-        "block_number_minted": "10420054",
-        "token_hash": "106275cfc495f09499b7cdcc2fe80c5f",
-        "amount": "1",
-        "contract_type": "ERC721",
-        "name": "Flewless",
-        "symbol": "FL",
-        "token_uri": "https://gateway.moralisipfs.com/ipfs/QmZysNp2aR9LPMFxZcTL2qpeqeJ6iLim3G7aoYm3gGJ8kv",
-        "metadata": "{\"name\":\"title\",\"description\":\"This is test tile\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmaoHZQG8NTBkCL1cWr8ZR1hzrC6754qLUwfpTZRZAUYQx\"}",
-        "last_token_uri_sync": null,
-        "last_metadata_sync": null
-      },
-      {
-        "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-        "token_id": "4",
-        "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
-        "block_number": "10391253",
-        "block_number_minted": "10382056",
-        "token_hash": "287960e3290d51394de54ebf28730f4d",
-        "amount": "1",
-        "contract_type": "ERC721",
-        "name": "Flewless",
-        "symbol": "FL",
-        "token_uri": "https://gateway.moralisipfs.com/ipfs/QmR6UucitEQkzd4EMtZEjFyhvVFpb4Acd5UfUK6ciz5DrD",
-        "metadata": "{\"name\":\"Gentle man\",\"description\":\"This is gentle man\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmRXK5YNUazr5uLu5m1p6n5YFyfS9kREtrwSdBjCtn9izy\"}",
-        "last_token_uri_sync": null,
-        "last_metadata_sync": null
-      },
-      {
-        "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-        "token_id": "15",
-        "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
-        "block_number": "10388636",
-        "block_number_minted": "10388626",
-        "token_hash": "2f67c208bc212347aa6c211b9a2497a5",
-        "amount": "1",
-        "contract_type": "ERC721",
-        "name": "Flewless",
-        "symbol": "FL",
-        "token_uri": "https://gateway.moralisipfs.com/ipfs/QmPUFq3EFqdqiFLEsTZLtNcQRoLgSRQ5DRKCg6Kh55BrwF",
-        "metadata": "{\"name\":\"Room \",\"description\":\"This is room\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmNUN3BGGp8U4EggTvX1rjvpxe7TLbZF4JgYRiQoZeAUsw\"}",
-        "last_token_uri_sync": null,
-        "last_metadata_sync": null
-      },
-      {
-        "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-        "token_id": "13",
-        "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
-        "block_number": "10388535",
-        "block_number_minted": "10388487",
-        "token_hash": "c6f7983242819b1e8aaf8b64bbaf914b",
-        "amount": "1",
-        "contract_type": "ERC721",
-        "name": "Flewless",
-        "symbol": "FL",
-        "token_uri": "https://gateway.moralisipfs.com/ipfs/QmSa5ifT43Er6nzk1x1vy3hJ5qGiuW5c41oDGRWsVWm264",
-        "metadata": "{\"name\":\"Shark\",\"description\":\"This is shark\",\"image\":\"https://gateway.pinata.cloud/ipfs/Qme3NCsmYyjGpRkCVsHrtreRm48GNc6DAY7Ba3YYSkCYan\"}",
-        "last_token_uri_sync": null,
-        "last_metadata_sync": null
-      },
-      {
-        "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-        "token_id": "10",
-        "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
-        "block_number": "10387370",
-        "block_number_minted": "10387049",
-        "token_hash": "0ce7636d25274f1f06c2cbd7cbb04519",
-        "amount": "1",
-        "contract_type": "ERC721",
-        "name": "Flewless",
-        "symbol": "FL",
-        "token_uri": "https://gateway.moralisipfs.com/ipfs/QmY8jkU9PGdxjQcBJ2pT5D1M9cJkCVyKEhkxgV3mWMGKfB",
-        "metadata": "{\"name\":\"Rochester John\",\"description\":\"12\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmbJ7EVMnWfaZzESZ7Q6vA2GmEo28AQZkkCfML7ReKsByW\"}",
-        "last_token_uri_sync": null,
-        "last_metadata_sync": null
-      },
-      {
-        "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-        "token_id": "1",
-        "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
-        "block_number": "10386864",
-        "block_number_minted": "10381092",
-        "token_hash": "50f145b4e27f576b32b1514a1d81202a",
-        "amount": "1",
-        "contract_type": "ERC721",
-        "name": "Flewless",
-        "symbol": "FL",
-        "token_uri": "https://gateway.moralisipfs.com/ipfs/QmaQWddbKemA87YpdAPCMEuKFVxzHMyA6niokYeQT2Kbt9",
-        "metadata": "{\"name\":\"NFT Test Item\",\"description\":\"This is an NFT Test Item.\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmbJ7EVMnWfaZzESZ7Q6vA2GmEo28AQZkkCfML7ReKsByW\"}",
-        "last_token_uri_sync": null,
-        "last_metadata_sync": null
-      }
-    ];
+    const rawData = await http.get(
+      `/${NFTmarketplaceAddress}/nft?chain=rinkeby&format=decimal`
+    );
+    const nfts = rawData.data.result;
+    // const nfts = [
+    //   {
+    //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+    //     "token_id": "16",
+    //     "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
+    //     "block_number": "10420077",
+    //     "block_number_minted": "10420054",
+    //     "token_hash": "106275cfc495f09499b7cdcc2fe80c5f",
+    //     "amount": "1",
+    //     "contract_type": "ERC721",
+    //     "name": "Flewless",
+    //     "symbol": "FL",
+    //     "token_uri": "https://gateway.moralisipfs.com/ipfs/QmZysNp2aR9LPMFxZcTL2qpeqeJ6iLim3G7aoYm3gGJ8kv",
+    //     "metadata": "{\"name\":\"title\",\"description\":\"This is test tile\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmaoHZQG8NTBkCL1cWr8ZR1hzrC6754qLUwfpTZRZAUYQx\"}",
+    //     "last_token_uri_sync": null,
+    //     "last_metadata_sync": null
+    //   },
+    //   {
+    //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+    //     "token_id": "4",
+    //     "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
+    //     "block_number": "10391253",
+    //     "block_number_minted": "10382056",
+    //     "token_hash": "287960e3290d51394de54ebf28730f4d",
+    //     "amount": "1",
+    //     "contract_type": "ERC721",
+    //     "name": "Flewless",
+    //     "symbol": "FL",
+    //     "token_uri": "https://gateway.moralisipfs.com/ipfs/QmR6UucitEQkzd4EMtZEjFyhvVFpb4Acd5UfUK6ciz5DrD",
+    //     "metadata": "{\"name\":\"Gentle man\",\"description\":\"This is gentle man\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmRXK5YNUazr5uLu5m1p6n5YFyfS9kREtrwSdBjCtn9izy\"}",
+    //     "last_token_uri_sync": null,
+    //     "last_metadata_sync": null
+    //   },
+    //   {
+    //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+    //     "token_id": "15",
+    //     "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
+    //     "block_number": "10388636",
+    //     "block_number_minted": "10388626",
+    //     "token_hash": "2f67c208bc212347aa6c211b9a2497a5",
+    //     "amount": "1",
+    //     "contract_type": "ERC721",
+    //     "name": "Flewless",
+    //     "symbol": "FL",
+    //     "token_uri": "https://gateway.moralisipfs.com/ipfs/QmPUFq3EFqdqiFLEsTZLtNcQRoLgSRQ5DRKCg6Kh55BrwF",
+    //     "metadata": "{\"name\":\"Room \",\"description\":\"This is room\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmNUN3BGGp8U4EggTvX1rjvpxe7TLbZF4JgYRiQoZeAUsw\"}",
+    //     "last_token_uri_sync": null,
+    //     "last_metadata_sync": null
+    //   },
+    //   {
+    //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+    //     "token_id": "13",
+    //     "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
+    //     "block_number": "10388535",
+    //     "block_number_minted": "10388487",
+    //     "token_hash": "c6f7983242819b1e8aaf8b64bbaf914b",
+    //     "amount": "1",
+    //     "contract_type": "ERC721",
+    //     "name": "Flewless",
+    //     "symbol": "FL",
+    //     "token_uri": "https://gateway.moralisipfs.com/ipfs/QmSa5ifT43Er6nzk1x1vy3hJ5qGiuW5c41oDGRWsVWm264",
+    //     "metadata": "{\"name\":\"Shark\",\"description\":\"This is shark\",\"image\":\"https://gateway.pinata.cloud/ipfs/Qme3NCsmYyjGpRkCVsHrtreRm48GNc6DAY7Ba3YYSkCYan\"}",
+    //     "last_token_uri_sync": null,
+    //     "last_metadata_sync": null
+    //   },
+    //   {
+    //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+    //     "token_id": "10",
+    //     "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
+    //     "block_number": "10387370",
+    //     "block_number_minted": "10387049",
+    //     "token_hash": "0ce7636d25274f1f06c2cbd7cbb04519",
+    //     "amount": "1",
+    //     "contract_type": "ERC721",
+    //     "name": "Flewless",
+    //     "symbol": "FL",
+    //     "token_uri": "https://gateway.moralisipfs.com/ipfs/QmY8jkU9PGdxjQcBJ2pT5D1M9cJkCVyKEhkxgV3mWMGKfB",
+    //     "metadata": "{\"name\":\"Rochester John\",\"description\":\"12\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmbJ7EVMnWfaZzESZ7Q6vA2GmEo28AQZkkCfML7ReKsByW\"}",
+    //     "last_token_uri_sync": null,
+    //     "last_metadata_sync": null
+    //   },
+    //   {
+    //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+    //     "token_id": "1",
+    //     "owner_of": "0x9ac06ac7a8c9ad8f289ef46b9aea5e4a2ce5cf93",
+    //     "block_number": "10386864",
+    //     "block_number_minted": "10381092",
+    //     "token_hash": "50f145b4e27f576b32b1514a1d81202a",
+    //     "amount": "1",
+    //     "contract_type": "ERC721",
+    //     "name": "Flewless",
+    //     "symbol": "FL",
+    //     "token_uri": "https://gateway.moralisipfs.com/ipfs/QmaQWddbKemA87YpdAPCMEuKFVxzHMyA6niokYeQT2Kbt9",
+    //     "metadata": "{\"name\":\"NFT Test Item\",\"description\":\"This is an NFT Test Item.\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmbJ7EVMnWfaZzESZ7Q6vA2GmEo28AQZkkCfML7ReKsByW\"}",
+    //     "last_token_uri_sync": null,
+    //     "last_metadata_sync": null
+    //   }
+    // ];
     console.log(nfts);
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       NFTmarketplaceAddress,
@@ -213,68 +215,68 @@ function Items() {
       const lengthOfItems = await connectedContract.getLengthOfItems();
       const length = parseInt(lengthOfItems, 16);
 
-      for (let i = 1; i <= length; i++) {
-        const gettingItem = await connectedContract.marketItems(i);
-        const gettingAuctionItem = await connectedContract.auctionItems(i);
-        const fixedItemid = Number(ethers.utils.formatEther(gettingItem["id"]._hex)) * 1e18;
-        const fixedTokenId = Number(ethers.utils.formatEther(gettingItem["tokenId"]._hex)) * 1e18;
-        const auctionItemid = Number(ethers.utils.formatEther(gettingAuctionItem["id"]._hex)) * 1e18;
-        const auctionTokenId = Number(ethers.utils.formatEther(gettingAuctionItem["tokenId"]._hex)) * 1e18;
+      // for (let i = 1; i <= length; i++) {
+      const gettingItem = await connectedContract.marketItems(lengthOfItems);
+      const gettingAuctionItem = await connectedContract.auctionItems(lengthOfItems);
+      const fixedItemid = Number(ethers.utils.formatEther(gettingItem["id"]._hex)) * 1e18;
+      const fixedTokenId = Number(ethers.utils.formatEther(gettingItem["tokenId"]._hex)) * 1e18;
+      const auctionItemid = Number(ethers.utils.formatEther(gettingAuctionItem["id"]._hex)) * 1e18;
+      const auctionTokenId = Number(ethers.utils.formatEther(gettingAuctionItem["tokenId"]._hex)) * 1e18;
 
-        if (fixedItemid > 0) {
-          let metadata = await getMetaByTokenId(
-            nfts,
-            fixedTokenId
-          );
-          const item = {
-            id: fixedItemid,
-            price: ethers.utils.formatEther(gettingItem["price"]._hex),
-            collectionId: parseInt(gettingItem["collectionId"], 16),
-            seller: gettingItem["seller"],
-            buyer: gettingItem["buyer"],
-            creator: gettingItem["creator"],
-            contract: gettingItem["nftContract"],
-            state: gettingItem["state"],
-            tokenId: fixedTokenId,
-            metadata: metadata,
-            type: "fixed",
-            duration: 0,
-          };
-          fixedItems.push(item);
-        }
-        if (
-          auctionItemid > 0 &&
-          auctionTokenId > 0
-        ) {
-          const tokenId = auctionTokenId;
-          let metadata = await getMetaByTokenId(nfts, tokenId);
-          const restTime = calcAuctionPeriod(
-            gettingAuctionItem["started_at"],
-            gettingAuctionItem["auctionBidPeriod"]
-          );
-          const item = {
-            id: auctionItemid,
-            price: ethers.utils.formatEther(
-              gettingAuctionItem["startPrice"]._hex
-            ),
-            collectionId: parseInt(gettingAuctionItem["collectionId"]._hex, 16),
-            seller: gettingAuctionItem["seller"],
-            buyer: gettingAuctionItem["highestBidder"],
-            creator: gettingAuctionItem["creator"],
-            contract: gettingAuctionItem["nftContract"],
-            state: gettingAuctionItem["state"],
-            tokenId: tokenId,
-            metadata: metadata,
-            now: Date.now(),
-            type: "auction",
-            duration: restTime,
-            highestBid: ethers.utils.formatEther(
-              gettingAuctionItem["highestBid"]._hex
-            ),
-          };
-          auctionItems.push(item);
-        }
+      if (fixedItemid > 0) {
+        let metadata = await getMetaByTokenId(
+          nfts,
+          fixedTokenId
+        );
+        const item = {
+          id: fixedItemid,
+          price: ethers.utils.formatEther(gettingItem["price"]._hex),
+          collectionId: parseInt(gettingItem["collectionId"], 16),
+          seller: gettingItem["seller"],
+          buyer: gettingItem["buyer"],
+          creator: gettingItem["creator"],
+          contract: gettingItem["nftContract"],
+          state: gettingItem["state"],
+          tokenId: fixedTokenId,
+          metadata: metadata,
+          type: "fixed",
+          duration: 0,
+        };
+        fixedItems.push(item);
       }
+      if (
+        auctionItemid > 0 &&
+        auctionTokenId > 0
+      ) {
+        const tokenId = auctionTokenId;
+        let metadata = await getMetaByTokenId(nfts, tokenId);
+        const restTime = calcAuctionPeriod(
+          gettingAuctionItem["started_at"],
+          gettingAuctionItem["auctionBidPeriod"]
+        );
+        const item = {
+          id: auctionItemid,
+          price: ethers.utils.formatEther(
+            gettingAuctionItem["startPrice"]._hex
+          ),
+          collectionId: parseInt(gettingAuctionItem["collectionId"]._hex, 16),
+          seller: gettingAuctionItem["seller"],
+          buyer: gettingAuctionItem["highestBidder"],
+          creator: gettingAuctionItem["creator"],
+          contract: gettingAuctionItem["nftContract"],
+          state: gettingAuctionItem["state"],
+          tokenId: tokenId,
+          metadata: metadata,
+          now: Date.now(),
+          type: "auction",
+          duration: restTime,
+          highestBid: ethers.utils.formatEther(
+            gettingAuctionItem["highestBid"]._hex
+          ),
+        };
+        auctionItems.push(item);
+      }
+      // }
       const fixedItem = fixedItems.filter((item, index) => {
         return item.collectionId === Number(collection_id);
       });
@@ -333,13 +335,15 @@ function Items() {
   };
 
   const getSoldOutItems = async () => {
+    const { ethereum } = window;
+
     // get current wallet address
-    const accounts = await window.ethereum.request({
+    const accounts = await ethereum.request({
       method: "eth_requestAccounts",
     });
     setAuth(accounts[0]);
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       NFTmarketplaceAddress,

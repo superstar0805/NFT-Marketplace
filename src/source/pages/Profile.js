@@ -70,116 +70,124 @@ function Profile() {
         signer
       );
       let nftItems = await connectedContract.fetchAllNFTS();
-      // const rawData = await http.get(
-      //   `/${accounts[0]}/nft?chain=rinkeby&format=decimal`
-      // );
-      // const nfts = rawData.data.result;
-      const nfts = [
-        {
-          "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-          "token_id": "1",
-          "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
-          "block_number": "10964595",
-          "block_number_minted": "10381092",
-          "token_hash": "50f145b4e27f576b32b1514a1d81202a",
-          "amount": "1",
-          "contract_type": "ERC721",
-          "name": "Flewless",
-          "symbol": "FL",
-          "token_uri": "https://gateway.moralisipfs.com/ipfs/QmaQWddbKemA87YpdAPCMEuKFVxzHMyA6niokYeQT2Kbt9",
-          "metadata": "{\"name\":\"NFT Test Item\",\"description\":\"This is an NFT Test Item.\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmbJ7EVMnWfaZzESZ7Q6vA2GmEo28AQZkkCfML7ReKsByW\"}",
-          "last_token_uri_sync": null,
-          "last_metadata_sync": null
-        },
-        {
-          "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-          "token_id": "25",
-          "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
-          "block_number": "10958640",
-          "block_number_minted": "10958640",
-          "token_hash": "f3557ce82a8f8ffdd9cd00da28df5258",
-          "amount": "1",
-          "contract_type": "ERC721",
-          "name": "Flewless",
-          "symbol": "FL",
-          "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmNVjSAFeYQpQQ6A8oLsFeyG9XA4DsFvL2R7FszdD8VGd5",
-          "metadata": "{\"name\":\"TEST ITEM\",\"description\":\"ITEM!\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmVYZxiBAJHK86gxEZRi76XmjC916uFjpyyE4v58MAaq4h\"}",
-          "last_token_uri_sync": "2022-07-03T08:19:23.824Z",
-          "last_metadata_sync": "2022-07-03T08:19:28.155Z"
-        },
-        {
-          "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-          "token_id": "24",
-          "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
-          "block_number": "10923751",
-          "block_number_minted": "10923751",
-          "token_hash": "8626d77ab6069ee7fe04b243a9574a35",
-          "amount": "1",
-          "contract_type": "ERC721",
-          "name": "Flewless",
-          "symbol": "FL",
-          "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmTMPTx6FV3WkFQ5BsX4CqQ1x9mXrwvcF7BRoaTsdsE3x5",
-          "metadata": "{\"name\":\"dfdfdsfdsf\",\"description\":\"dfsdfdfdsfdf\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmckcWrMxcuBGufHqxLTJeWhcCbot7dPC7YUMjRZMBmqzr\"}",
-          "last_token_uri_sync": "2022-06-27T06:41:52.049Z",
-          "last_metadata_sync": "2022-06-27T06:41:58.141Z"
-        },
-        {
-          "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-          "token_id": "23",
-          "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
-          "block_number": "10922213",
-          "block_number_minted": "10922213",
-          "token_hash": "c454205731b2d28d6f7cf49c377bb935",
-          "amount": "1",
-          "contract_type": "ERC721",
-          "name": "Flewless",
-          "symbol": "FL",
-          "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmYF7Ugy1dEyUrdufuHqhzwLHRDDCUQ7t4hqLbnRVaqmaF",
-          "metadata": "{\"name\":\"BBB\",\"description\":\"BBB\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmckcWrMxcuBGufHqxLTJeWhcCbot7dPC7YUMjRZMBmqzr\"}",
-          "last_token_uri_sync": "2022-06-27T00:17:02.314Z",
-          "last_metadata_sync": "2022-06-27T00:17:05.961Z"
-        },
-        {
-          "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
-          "token_id": "22",
-          "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
-          "block_number": "10919687",
-          "block_number_minted": "10919687",
-          "token_hash": "5ed1edd80547b7e21e4757a6ad11ae35",
-          "amount": "1",
-          "contract_type": "ERC721",
-          "name": "Flewless",
-          "symbol": "FL",
-          "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmcEpP1Fah9wTqeHbvJ4d3ntKG4FtLjnShswDdSrpyT4eH",
-          "metadata": "{\"name\":\"pakssss\",\"description\":\"testssssssss\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmckcWrMxcuBGufHqxLTJeWhcCbot7dPC7YUMjRZMBmqzr\"}",
-          "last_token_uri_sync": "2022-06-26T13:44:03.885Z",
-          "last_metadata_sync": "2022-06-26T13:44:05.040Z"
-        }
-      ]
+      const rawData = await http.get(
+        `/${accounts[0]}/nft?chain=rinkeby&format=decimal`
+      );
+      const nfts = rawData.data.result;
+      console.log(nfts);
+      // const nfts = [
+      //   {
+      //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+      //     "token_id": "31",
+      //     "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
+      //     "block_number": "10974168",
+      //     "block_number_minted": "10974168",
+      //     "token_hash": "097f2571c4b01edfa814a13f6a6eaad3",
+      //     "amount": "1",
+      //     "contract_type": "ERC721",
+      //     "name": "Flewless",
+      //     "symbol": "FL",
+      //     "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmeyhbiXm2xy9SdKNGgC3aYu2nEVr295Yydi44cqeBwu2H",
+      //     "metadata": "{\"name\":\"Auction ITEM2\",\"description\":\"Auction ITEM2\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmcYEw7o1Q1vka6NGq6A3WvqaLdC3rAodtA8RemMPmo1Cp\"}",
+      //     "last_token_uri_sync": "2022-07-06T01:08:44.860Z",
+      //     "last_metadata_sync": "2022-07-06T01:08:56.227Z"
+      //   },
+      //   {
+      //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+      //     "token_id": "30",
+      //     "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
+      //     "block_number": "10974157",
+      //     "block_number_minted": "10974157",
+      //     "token_hash": "695f0c3038c1262dff1b97c517caf290",
+      //     "amount": "1",
+      //     "contract_type": "ERC721",
+      //     "name": "Flewless",
+      //     "symbol": "FL",
+      //     "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmeyhbiXm2xy9SdKNGgC3aYu2nEVr295Yydi44cqeBwu2H",
+      //     "metadata": "{\"name\":\"Auction ITEM2\",\"description\":\"Auction ITEM2\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmcYEw7o1Q1vka6NGq6A3WvqaLdC3rAodtA8RemMPmo1Cp\"}",
+      //     "last_token_uri_sync": "2022-07-06T01:06:18.376Z",
+      //     "last_metadata_sync": "2022-07-06T01:06:24.849Z"
+      //   },
+      //   {
+      //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+      //     "token_id": "29",
+      //     "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
+      //     "block_number": "10974153",
+      //     "block_number_minted": "10974153",
+      //     "token_hash": "ceead126b4cf8fd33b0bd6a4f8d3f148",
+      //     "amount": "1",
+      //     "contract_type": "ERC721",
+      //     "name": "Flewless",
+      //     "symbol": "FL",
+      //     "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmdHCzdVcXzQoFZ2DZUYTPsk4pRAnd7iE7Cpw8epXuV4aT",
+      //     "metadata": "{\"name\":\"FIXED ITEM2\",\"description\":\"FIXED ITEM2\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmRYJbDmd6BaKyoYo5PsA7wUZPYFbJr3X2BjdozNDhLtcG\"}",
+      //     "last_token_uri_sync": "2022-07-06T01:05:00.855Z",
+      //     "last_metadata_sync": "2022-07-06T01:05:11.174Z"
+      //   },
+      //   {
+      //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+      //     "token_id": "28",
+      //     "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
+      //     "block_number": "10974149",
+      //     "block_number_minted": "10974149",
+      //     "token_hash": "8bc11c4a86dfd7062cc1b98e956c8ed3",
+      //     "amount": "1",
+      //     "contract_type": "ERC721",
+      //     "name": "Flewless",
+      //     "symbol": "FL",
+      //     "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmUjdwbS1hY1EK4k6xTC9SxgruJcJm2gfv81n6pCFgiWrZ",
+      //     "metadata": "{\"name\":\"Auction ITEM\",\"description\":\"Auction ITEM\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmaxRpMTpdKubGEmhPJGTVYT76rvmjiPMSVEgvdTZEYYLY\"}",
+      //     "last_token_uri_sync": "2022-07-06T01:04:09.468Z",
+      //     "last_metadata_sync": "2022-07-06T01:04:20.159Z"
+      //   },
+      //   {
+      //     "token_address": "0xf118940d61580431323d05f67d2f42615ebba3ed",
+      //     "token_id": "27",
+      //     "owner_of": "0x1d507a4386ceeefa177353f3a95c3e0eaf047163",
+      //     "block_number": "10974143",
+      //     "block_number_minted": "10974143",
+      //     "token_hash": "ad6bd4be54aef573ede578ef74bad996",
+      //     "amount": "1",
+      //     "contract_type": "ERC721",
+      //     "name": "Flewless",
+      //     "symbol": "FL",
+      //     "token_uri": "https://ipfs.moralis.io:2053/ipfs/QmZ1zs28qFeUq14G1doEz2sFtNBNUYUb2ESPHMg2EQ8BLF",
+      //     "metadata": "{\"name\":\"FIXED\",\"description\":\"Fixed ITEM\",\"image\":\"https://gateway.pinata.cloud/ipfs/QmbPyheHwLxFaTKrJ6Xyj3J3G6W5M99QCKCSJRWU59dfiX\"}",
+      //     "last_token_uri_sync": "2022-07-06T01:02:43.623Z",
+      //     "last_metadata_sync": "2022-07-06T01:02:51.855Z"
+      //   }
+
+      // ]
       const myNFTs = nfts.filter((el, index) => {
         return (el.token_address).toLowerCase() == NFTAddress.toLowerCase();
       });
       console.log(myNFTs);
       let myNFTList = [];
+      if (myNFTs && nftItems) {
 
-      myNFTs.forEach((value, index) => {
+        myNFTs?.forEach((value, index) => {
 
-        const collectionIds = nftItems.filter((item, index) => {
+          const collectionIds = nftItems.filter((item, index) => {
 
-          let tokenID = Number(ethers.utils.formatEther(item["tokenId"]._hex)) * 1e18;
-          return Number(tokenID) === Number(value.token_id);
+            let tokenID = Number(ethers.utils.formatEther(item["tokenId"]._hex)) * 1e18;
+            return Number(tokenID) === Number(value.token_id);
+
+          });
+          if (collectionIds[0] && value) {
+            let tId = Number(ethers.utils.formatEther(collectionIds[0]['tokenId']._hex)) * 1e18;
+            let nft = {
+              tokenId: Number(value.token_id),
+              collectionId: tId,
+              owner: value.owner_of,
+              imgInfo: JSON.parse(value.metadata),
+            };
+            myNFTList.push(nft);
+          }
+
 
         });
+      }
 
-        let tId = Number(ethers.utils.formatEther(collectionIds[0]['tokenId']._hex)) * 1e18;
-        let nft = {
-          tokenId: Number(value.token_id),
-          collectionId: tId,
-          owner: value.owner_of,
-          imgInfo: JSON.parse(value.metadata),
-        };
-        myNFTList.push(nft);
-      });
       console.log(myNFTList);
       setNFTItems(myNFTList);
       setIsLoading(false);
@@ -192,13 +200,15 @@ function Profile() {
   };
 
   const getSoldOutItems = async () => {
+    const { ethereum } = window;
+
     // get current wallet address
-    const accounts = await window.ethereum.request({
+    const accounts = await ethereum.request({
       method: "eth_requestAccounts",
     });
     setAuth(accounts[0]);
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       NFTmarketplaceAddress,
@@ -250,6 +260,7 @@ function Profile() {
         collections.push(results[index]);
       }
     }
+    console.log(collections);
     setCollections(collections);
   };
 
@@ -299,7 +310,7 @@ function Profile() {
         result
       );
       await listing.wait();
-      toastr.success("Successfully Listed!");
+      // toastr.success("Successfully Listed!");
       getNFTItems();
     } else {
       let listing = await _marketContract.createMarketItem(
@@ -309,7 +320,7 @@ function Profile() {
         price
       );
       await listing.wait();
-      toastr.success("Successfully Listed for First Sale!");
+      // toastr.success("Successfully Listed for First Sale!");
       getNFTItems();
     }
     setBtnText('Complete Listing');
@@ -797,7 +808,7 @@ function Profile() {
                                     </a>
                                     <div className="action">
                                       <a
-                                        href="#"
+
                                         className="btn
                                                                                     btn-primary btn-sm
                                                                                     btn_auction"
